@@ -1,0 +1,24 @@
+{
+  "name": "scripts-scrappers",
+  "version": "1.0.0",
+  "description": "local javascript script files and web scrappers",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "nodemon src/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allcodesnick/scripts-scrappres.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allcodesnick/scripts-scrappres/issues"
+  },
+  "homepage": "https://github.com/allcodesnick/scripts-scrappres#readme",
+  "dependencies": {
+    "daemon": "^1.1.0",
+    "jest": "^29.7.0"
+  }
+}
