@@ -1,0 +1,43 @@
+# Name of the GitHub Actions workflow
+name: Jest Testing
+
+# Define the trigger event for the workflow
+on:
+  push:
+    branches:
+      - main
+
+# Define the jobs to be executed
+jobs:
+  # Job for building and testing
+  build:
+    # Specify the runner (operating system) for the job
+    runs-on: ubuntu-latest
+
+    # Define the steps to be executed in the job
+    steps:
+      # Step 1: Checkout the repository to the runner
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.x # or '14', without the '.x'
+          # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+      # Step 3: Install project dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run Jest tests without coverage
+      - name: Run Jest tests
+        run: npm test
+
+      # Step 5: Run Jest tests with coverage and display results
+      - name: Run Jest tests with coverage
+        run: |
+          npm test -- --coverage --json > test-results.json
+          cat test-results.json
+        continue-on-error: true  # Continue even if there are test failures

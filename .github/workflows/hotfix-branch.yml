@@ -1,9 +1,9 @@
-name: Main Branch Workflow
+name: Hotfix Branch Workflow
 
 on:
   push:
     branches:
-      - main
+      - 'hotfix/*'
 
 jobs:
   build:
@@ -13,4 +13,4 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Add your main branch workflow steps here
+      # Add your hotfix branch workflow steps here

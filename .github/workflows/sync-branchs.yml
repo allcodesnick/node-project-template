@@ -1,0 +1,23 @@
+name: Sync New Branch
+
+on:
+  create:
+    branches:
+      - '*'
+
+jobs:
+  sync-branch:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Sync branch
+      run: |
+        # Add your synchronization steps here
+        git fetch --all
+        git checkout ${{ github.event.ref }}
+        git merge origin/${{ github.event.ref }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
