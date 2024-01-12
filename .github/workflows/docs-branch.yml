@@ -3,7 +3,7 @@ name: Documentation Branch Workflow
 on:
   push:
     branches:
-      - main
+      - docs
 
 jobs:
   build:
