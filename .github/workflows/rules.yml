@@ -18,7 +18,7 @@ jobs:
           BRANCH_NAME=$(git branch --show-current)
 
           # Define the allowed branch patterns
-          ALLOWED_PATTERNS="^(main|develop|deploy|hotfix-.*|release-.*|bugfix-.*|feature-.*)$"
+          ALLOWED_PATTERNS="^(hotfix-.*|release-.*|bugfix-.*|feature-.*)$"
 
           # Check if the branch name matches the allowed patterns
           if [[ ! "$BRANCH_NAME" =~ $ALLOWED_PATTERNS ]]; then
