@@ -3,7 +3,7 @@ name: Hotfix Branch Workflow
 on:
   push:
     branches:
-      - 'hotfix-*'
+      - 'hotfix/*'
 
 jobs:
   build:
